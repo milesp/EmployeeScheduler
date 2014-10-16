@@ -1,0 +1,9 @@
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\EmployeeScheduler.dll
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\EmployeeScheduler.pdb
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\ES.Controller.dll
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\ES.Model.dll
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\ES.Controller.pdb
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\bin\ES.Model.pdb
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\obj\Debug\EmployeeScheduler.csprojResolveAssemblyReference.cache
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\obj\Debug\EmployeeScheduler.dll
+E:\visual studios\EmployeeScheduler\EmployeeScheduler\obj\Debug\EmployeeScheduler.pdb
