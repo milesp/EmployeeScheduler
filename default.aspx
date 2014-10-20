@@ -12,9 +12,14 @@
                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
                <asp:TextBox ID="shiftsPerDay" runat="server"></asp:TextBox>
                <asp:TextBox ID="numOfDays" runat="server"></asp:TextBox>
-               <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
-               </asp:Repeater>
     </div>
+         <div>
+              <br />
+              <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+              </asp:Repeater>
+              <br />
+         </div>
+         <asp:ObjectDataSource ID="ObjectDataSource1" SelectMethod="GetShifts" TypeName="ES.Model.Shift" runat="server"></asp:ObjectDataSource>
     </form>
 </body>
 </html>
