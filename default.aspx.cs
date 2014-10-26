@@ -14,40 +14,38 @@ namespace EmployeeScheduler
          public WorkPeriod myWorkPeriod { get; set; }
           protected void Page_Load(object sender, EventArgs e)
           {
-               if (myWorkPeriod == null)
+               if (Page.IsPostBack == false)
                {
-                    CacheItemPolicy policy = new CacheItemPolicy();
-                    myWorkPeriod = new WorkPeriod();
-                    ObjectCache cache = MemoryCache.Default;
-                    string workLabel = cache["workLabel"] as string;
-                    cache.Set("workLabel", myWorkPeriod, policy);
-               }
+                    if (myWorkPeriod != null)
+                    {
+                         Repeater1.Visible = false;
+                         Repeater1.DataSource = new[] { myWorkPeriod.workWeek[0, 0] }.ToList();
+                         Repeater1.DataBind();                       
 
+                    }
+                    else
+                    {
+                         myWorkPeriod = new WorkPeriod();
+                    }
+               }
           }
           
 
           protected void Button1_Click(object sender, EventArgs e)
           {
                
-               //Label2.Text = x;
-               //Employee q = new Employee();
-               //name, ssn, exp, availability, wage, min, max
-               //Employee y = new Employee("miles", "124432", 1.0, availability, 20.0, 1, 1);
-               //int dayss = Convert.ToInt32(shiftsPerDay.Text.ToString());
-               //int shiftsss = Convert.ToInt32(numOfDays.Text.ToString());
                int dayss = Convert.ToInt32(shiftsPerDay.Text.ToString());
                int shiftsss = Convert.ToInt32(numOfDays.Text.ToString());
-               myWorkPeriod = (new WorkPeriod(dayss, shiftsss));              
-               
+               myWorkPeriod = (new WorkPeriod(dayss, shiftsss));               
+               Repeater1.DataSource = new[] { myWorkPeriod.workWeek[0, 0] }.ToList();
+               Repeater1.DataBind();
+               Repeater1.Visible = true;
           }
 
-          public static System.Collections.ICollection GetShifts()
-          {
-               //move this to default???
-               return new[] { new Shift(), new Shift() }.ToList();
-          }
 
-          protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+
+
+          protected void Repeater1_ItemCommand1(object source, RepeaterCommandEventArgs e)
           {
 
           }

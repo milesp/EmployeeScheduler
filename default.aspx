@@ -14,9 +14,8 @@
                <asp:TextBox ID="numOfDays" runat="server"></asp:TextBox>
     </div>
          <div>
-              <br />
-              <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-                   <ItemTemplate>
+              <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand1">
+                    <ItemTemplate>
                         <tr>
                              <td>
                                   <asp:TextBox runat="server" ID="TextBox1"
@@ -26,17 +25,29 @@
                                   <asp:TextBox runat="server" ID="TextBox2"
                                        Text='<%# Eval("ShiftNum") %>' />
                              </td>
+                             <td>
+                               <asp:TextBox runat="server" ID="TextBox3"
+                                       Text='<%# Eval("EmployeeTotal") %>' />
+                             </td>
+                             <td>
+                               <asp:TextBox runat="server" ID="TextBox4"
+                                       Text='<%# Eval("ExpAvg") %>' />
+                             </td>
+                              <br><br/>
+
+
                         </tr>
                    </ItemTemplate>
               </asp:Repeater>
               <br />
 
+              <br />
+
          </div>
          <div>
-  Wheels: <%= myWorkPeriod.workWeek[0,0].ExpMax %><br />
+  
   
 </div>
-         <asp:ObjectDataSource ID="ObjectDataSource1" SelectMethod="GetShifts" TypeName="ES.Model.WorkPeriod" runat="server"></asp:ObjectDataSource>
   </form>
 </body>
 </html>
