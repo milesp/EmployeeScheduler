@@ -16,10 +16,27 @@
          <div>
               <br />
               <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                   <ItemTemplate>
+                        <tr>
+                             <td>
+                                  <asp:TextBox runat="server" ID="TextBox1"
+                                       Text='<%# Eval("Day") %>' />
+                             </td>
+                             <td>
+                                  <asp:TextBox runat="server" ID="TextBox2"
+                                       Text='<%# Eval("ShiftNum") %>' />
+                             </td>
+                        </tr>
+                   </ItemTemplate>
               </asp:Repeater>
               <br />
+
          </div>
-         <asp:ObjectDataSource ID="ObjectDataSource1" SelectMethod="GetShifts" TypeName="ES.Model.Shift" runat="server"></asp:ObjectDataSource>
-    </form>
+         <div>
+  Wheels: <%= myWorkPeriod.workWeek[0,0].ExpMax %><br />
+  
+</div>
+         <asp:ObjectDataSource ID="ObjectDataSource1" SelectMethod="GetShifts" TypeName="ES.Model.WorkPeriod" runat="server"></asp:ObjectDataSource>
+  </form>
 </body>
 </html>
