@@ -14,7 +14,9 @@
                <asp:TextBox ID="numOfDays" runat="server"></asp:TextBox>
     </div>
          <div>
-              <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand1">
+              <asp:Repeater ID="Repeater1" runat="server">
+                   <HeaderTemplate><table></HeaderTemplate>
+                   <FooterTemplate></table></FooterTemplate>
                     <ItemTemplate>
                         <tr>
                              <td>
@@ -34,9 +36,8 @@
                                        Text='<%# Eval("ExpAvg") %>' />
                              </td>
                               <br><br/>
-
-
                         </tr>
+                         
                    </ItemTemplate>
               </asp:Repeater>
               <br />
